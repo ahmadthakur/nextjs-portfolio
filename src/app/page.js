@@ -1,113 +1,152 @@
-import Image from 'next/image'
+"use client"; // This is a client component 👈🏽
+
+import Head from "next/head";
+import { BsFillMoonFill } from "react-icons/bs";
+import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import Image from "next/image";
+import picture from "../../public/pxfuel.jpg";
+import frontend from "../../public/frontend.png";
+import backend from "../../public/backend.png";
+import project1 from "../../public/project1.png";
+import project2 from "../../public/project2.png";
+import Footer from "./components/Footer";
+import { useState } from "react";
+import giticon from "../../public/Icons/git-icon.svg";
+import javascript from "../../public/Icons/javascript.svg";
+import react from "../../public/Icons/react.svg";
+import node from "../../public/Icons/nodejs.svg";
+import postgresql from "../../public/Icons/postgresql.svg";
 
 export default function Home() {
+  const [darkMode, setDarkMode] = useState(false);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
+    <div className={darkMode ? "dark" : ""}>
+      <Head>
+        <title>My page title</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+
+      <main className="bg-white px-10 md:px-20 lg:px-40 dark:bg-slate-800 dark:text-white">
+        <section className="min-h-screen">
+          <div>
+            <nav className="py-10 mb-12 flex justify-between">
+              <a
+                href="https://www.youtube.com/watch?v=xvFZjo5PgG0"
+                target="_blank"
+              >
+                <h1 className="text-xl">Do not click this!</h1>
+              </a>
+              <ul className="flex items-center">
+                <li>
+                  <BsFillMoonFill
+                    onClick={() => setDarkMode(!darkMode)}
+                    className="cursor-pointer text-xl"
+                  />
+                </li>
+                <li>
+                  <a
+                    className="bg-gradient-to-r from-red-500 to-violet-500 text-white px-4 py-2 rounded-md ml-8 text-xl"
+                    href="../../public/Ahmad_Thakur_Resume.pdf"
+                    download={"Ahmad_Thakur_Resume.pdf"}
+                  >
+                    Resume
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div className="text-center p-10">
+            <h2 className="text-5xl text-violet-600 font-medium">
+              Ahmad Thakur
+            </h2>
+            <h3 className="text-2xl py-2 dark:text-white">Software Engineer</h3>
+            <p className="text-md py-5 text-gray-800 leading-8  dark:bg-slate-800 dark:text-white">
+              I am a software engineering undergrad experienced in building web
+              applications.
+            </p>
+          </div>
+          <div className="text-5xl flex justify-center gap-16 py-3 text-gray-800">
+            <a href="https://github.com/ahmadthakur" target="_blank">
+              <AiFillGithub className=" dark:text-white" />
+            </a>
+            <a href="https://www.linkedin.com/in/ahmadthakur" target="_blank">
+              <AiFillLinkedin className=" dark:text-white" />
+            </a>
+          </div>
+          <div className="relative mx-auto w-80 h-80">
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+              className="mt-20 object-fill rounded-full"
+              src={picture}
+              alt="Picture of the author"
+              style={{ objectFit: "cover", width: "100%", height: "100%" }}
             />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+          </div>
+        </section>
+        {/* Section 2 */}
+        <section>
+          <div className="text-center mt-12">
+            <h3 className="text-3xl py-1  dark:text-white">What I do</h3>
+            <p className="text-md py-2 text-gray-800 leading-8  dark:text-white">
+              I have worked with various technologies like React, Node, Express,
+              MongoDB, MySQL, and Docker.
+            </p>
+            <div className="flex gap-10 lg:flex-row lg:flex-wrap my-12 justify-center">
+              <Image src={javascript} style={{ width: "10%", height: "10%" }} />
+              <Image src={node} style={{ width: "10%", height: "10%" }} />
+              <Image src={react} style={{ width: "10%", height: "10%" }} />
+              <Image src={postgresql} style={{ width: "10%", height: "10%" }} />
+              <Image src={giticon} style={{ width: "10%", height: "10%" }} />
+            </div>
+          </div>
+          {/* <div>
+            <div className="text-center shadow-lg p-10 rounded-xl my-10">
+              <Image
+                src={frontend}
+                style={{ width: "40%", height: "40%" }}
+                className="block mx-auto"
+              />
+              <h3>Frontend Development</h3>
+            </div>
+            <div className="text-center shadow-lg p-10 rounded-xl my-10">
+              <Image
+                src={backend}
+                style={{ width: "40%", height: "40%" }}
+                className="block mx-auto"
+              />
+              <h3>Backend Development</h3>
+            </div>
+          </div> */}
+          <div className="text-center mt-12">
+            <h3 className="text-3xl py-1">Projects</h3>
+            <div className="flex flex-col gap-10 lg:flex-row lg:flex-wrap">
+              <div className="mt-12 basis-1/4 flex-1 text-center shadow-lg p-10 rounded-xl my-10 bg-slate-500  text-white">
+                <a
+                  href="https://github.com/ahmadthakur/Sad_Machine"
+                  target="_blank"
+                >
+                  <Image src={project1} />
+                  <h3 className="text-xl py-2 text-white">Sad Machine</h3>
+                  <p>
+                    Sad Machine is a discord bot with various features like
+                    moderation, music, and fun commands.
+                  </p>
+                </a>
+              </div>
+              <div className="mt-12 basis-1/4 flex-1 text-center shadow-lg p-10 rounded-xl my-10 bg-slate-500  text-white">
+                <a href="https://kaomojipedia.netlify.app/" target="_blank">
+                  <Image src={project2} />
+                  <h3 className="text-xl py-2">Kaomoji Pedia</h3>
+                  <p>
+                    Kaomoji Pedia is a website that allows users to copy
+                    kaomojis by just clicking on them.
+                  </p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <Footer></Footer>
+      </main>
+    </div>
+  );
 }
