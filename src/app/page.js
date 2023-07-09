@@ -46,8 +46,9 @@ export default function Home() {
                 <li>
                   <a
                     className="bg-gradient-to-r from-red-500 to-violet-500 text-white px-4 py-2 rounded-md ml-8 text-xl"
-                    href="../../public/Ahmad_Thakur_Resume.pdf"
-                    download={"Ahmad_Thakur_Resume.pdf"}
+                    href="https://drive.google.com/file/d/1-jb7XT4-bNF78feRMTjSt0W4eaUbVyEL/view"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Resume
                   </a>
@@ -98,24 +99,6 @@ export default function Home() {
               <Image src={giticon} style={{ width: "10%", height: "10%" }} />
             </div>
           </div>
-          {/* <div>
-            <div className="text-center shadow-lg p-10 rounded-xl my-10">
-              <Image
-                src={frontend}
-                style={{ width: "40%", height: "40%" }}
-                className="block mx-auto"
-              />
-              <h3>Frontend Development</h3>
-            </div>
-            <div className="text-center shadow-lg p-10 rounded-xl my-10">
-              <Image
-                src={backend}
-                style={{ width: "40%", height: "40%" }}
-                className="block mx-auto"
-              />
-              <h3>Backend Development</h3>
-            </div>
-          </div> */}
           <div className="text-center mt-12">
             <h3 className="text-3xl py-1">Projects</h3>
             <div className="flex flex-col gap-10 lg:flex-row lg:flex-wrap">
